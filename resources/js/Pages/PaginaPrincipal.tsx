@@ -1,5 +1,5 @@
 import React from "react";
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { InertiaLinkProps, Link } from "@inertiajs/react";
 
 const MainPage = () => {
     return (
@@ -7,50 +7,36 @@ const MainPage = () => {
             <h1>Lista de Exercicio</h1>
             <ul>
                 <li>
-                    <InertiaLink href="/FormCadastro">
+                    <Link href="/FormCadastro">
                         Formulário de Cadastro Simples
-                    </InertiaLink>
+                    </Link>
                 </li>
                 <li>
-                    <InertiaLink href="/login">Formulário de Login</InertiaLink>
+                    <Link href="/login">Formulário de Login</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/Pesquisa">
-                        Pesquisa com Método GET
-                    </InertiaLink>
+                    <Link href="/Pesquisa">Pesquisa com Método GET</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/FormContato">
-                        Formulário de Contato
-                    </InertiaLink>
+                    <Link href="/FormContato">Formulário de Contato</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/Calculadora">
-                        Calculadora Simples
-                    </InertiaLink>
+                    <Link href="/Calculadora">Calculadora Simples</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/Feedback">
-                        Feedback de Produtos
-                    </InertiaLink>
+                    <Link href="/Feedback">Feedback de Produtos</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/Eventos">
-                        Registro de Eventos
-                    </InertiaLink>
+                    <Link href="/Eventos">Registro de Eventos</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/Newsletter">
-                        Formulário de Inscrição em Newsletter
-                    </InertiaLink>
+                    <Link href="/Newsletter">Newsletter</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/quiz">Quiz Online</InertiaLink>
+                    <Link href="/quiz">Quiz Online</Link>
                 </li>
                 <li>
-                    <InertiaLink href="/Preferências">
-                        Enquete de Preferências
-                    </InertiaLink>
+                    <Link href="/Preferências">Enquete de Preferências</Link>
                 </li>
             </ul>
         </div>
