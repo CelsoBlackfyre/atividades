@@ -8,6 +8,8 @@ const FormCadastro = () => {
             nome: "",
             sobrenome: "",
             email: "",
+            nomeUsuario: "",
+            senha: "",
             idade: "",
         },
     ]);
@@ -79,6 +81,36 @@ const FormCadastro = () => {
                             type="email"
                             id="email"
                             name="email"
+                            onChange={handleChange}
+                            className="w-full px-3 dark:text-gray-200 dark:bg-gray-900 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div className="flex items-start flex-col justify-start">
+                        <label
+                            htmlFor="nomeUsuario"
+                            className="text-sm text-gray-700 dark:text-gray-200 mr-2"
+                        >
+                            Nome Usuario:
+                        </label>
+                        <input
+                            type="text"
+                            id="nomeUsuario"
+                            name="nomeUsuario"
+                            onChange={handleChange}
+                            className="w-full px-3 dark:text-gray-200 dark:bg-gray-900 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div className="flex items-start flex-col justify-start">
+                        <label
+                            htmlFor="senha"
+                            className="text-sm text-gray-700 dark:text-gray-200 mr-2"
+                        >
+                            Senha:
+                        </label>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
                             onChange={handleChange}
                             className="w-full px-3 dark:text-gray-200 dark:bg-gray-900 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />

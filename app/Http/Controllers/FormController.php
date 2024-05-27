@@ -23,6 +23,8 @@ class FormController extends Controller
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
             'email' => 'required|email|string',
+            'nomeUsuario' => 'required|string',
+            'senha' => 'required|string',
             'idade' => 'required|integer|min:18',
         ]);
 
@@ -33,8 +35,22 @@ class FormController extends Controller
     }
 
 
+    public function Logar(Request $request)
+    {
+        $dados = $request->validate([
+            'nomeUsuario' => 'required|string',
+            'senha' => 'required|string',
+        ]);
 
+        return Inertia::render('PaginaPrincipal', ['dados' => $dados]);
+    }
 
+    public function authenticated(Request $request, $user)
+    {
+        $message = 'Usuario invalido'; // Customize the message
+
+        return Inertia::render('Login', compact('Usuario invalido'));
+    }
 
 
 

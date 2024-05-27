@@ -10,6 +10,8 @@ const ResultadoForm = ({ dados }) => {
                     <p>Nome: {dados.nome}</p>
                     <p>Sobrenome: {dados.sobrenome}</p>
                     <p>Email: {dados.email}</p>
+                    <p>Nome de Usuario: {dados.nomeUsuario}</p>
+                    <p>Senha: {dados.senha}</p>
                     <p>Idade: {dados.idade}</p>
                     <p>
                         <InertiaLink href="/">Voltar</InertiaLink>
