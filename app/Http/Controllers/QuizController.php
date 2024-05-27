@@ -23,18 +23,18 @@ class QuizController extends Controller
         ]);
 
         $respostas = [
-            'pergunta1' => $request->input('pergunta1'),
-            'pergunta2' => $request->input('pergunta2'),
+            'pergunta1' => 'Londres',
+            'pergunta2' => '4',
         ];
 
         $acertos = 0;
         foreach ($respostas as $pergunta => $resposta) {
-            if ($resposta == "a") {
+            if ($request->input($pergunta) == $resposta) {
                 $acertos++;
             }
         }
 
-        return view("quiz.resultado", compact('$acertos'), ['respostas' => $respostas]);
+        return view("quiz.resultado", ['acertos' => $acertos]);
     }
 
     /**
