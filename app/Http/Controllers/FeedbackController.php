@@ -13,7 +13,7 @@ class FeedbackController extends Controller
         $request->validate([
             'nomeProduto' => 'required|string',
             'avaliacao' => 'required|integer',
-            'comment' => 'required|string',
+            'comentario' => 'required|string',
         ]);
         return Inertia::render('Feedback', ['message' => 'Feedback enviado com sucesso!']);
     }
