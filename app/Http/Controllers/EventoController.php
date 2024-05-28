@@ -3,37 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class NewsletterController extends Controller
+class EventoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
 
-    public function mostrar(Request $request)
-    {
-
-        return Inertia::render('Newsletter');
-    }
-
-    public function inscrever(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-        ]);
-
-        $email = $request->input('email');
-
-        return Inertia::render('Newsletter', ['message' => 'Inscrito com sucesso!']);
-    }
-    public function index()
+    public function mostrarParticipanetes()
     {
         //
+        $participantes = Participante::all();
 
+        return view("participante", compact("participante"));
     }
-
-
 
     /**
      * Store a newly created resource in storage.

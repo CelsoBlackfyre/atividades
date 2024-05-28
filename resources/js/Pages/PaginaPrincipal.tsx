@@ -1,13 +1,13 @@
 import React from "react";
 import { InertiaLinkProps, Link } from "@inertiajs/react";
 
-const MainPage = () => {
+const PaginaPrincipal = () => {
     return (
         <div>
             <h1>Lista de Exercicio</h1>
             <ul>
                 <li>
-                    <Link href="/FormCadastro">
+                    <Link href="/form-cadastro">
                         Formulário de Cadastro Simples
                     </Link>
                 </li>
@@ -15,32 +15,32 @@ const MainPage = () => {
                     <Link href="/login">Formulário de Login</Link>
                 </li>
                 <li>
-                    <Link href="/Pesquisa">Pesquisa com Método GET</Link>
+                    <Link href="/pesquisa">Pesquisa com Método GET</Link>
                 </li>
                 <li>
-                    <Link href="/FormContato">Formulário de Contato</Link>
+                    <Link href="/Contato">Formulário de Contato</Link>
                 </li>
                 <li>
-                    <Link href="/Calculadora">Calculadora Simples</Link>
+                    <Link href="/calculadora">Calculadora Simples</Link>
                 </li>
                 <li>
-                    <Link href="/Feedback">Feedback de Produtos</Link>
+                    <Link href="/feedback">Feedback de Produtos</Link>
                 </li>
                 <li>
-                    <Link href="/Eventos">Registro de Eventos</Link>
+                    <Link href="/eventos">Registro de Eventos</Link>
                 </li>
                 <li>
-                    <Link href="/Newsletter">Newsletter</Link>
+                    <Link href="/newsletter">Newsletter</Link>
                 </li>
                 <li>
                     <Link href="/quiz">Quiz Online</Link>
                 </li>
                 <li>
-                    <Link href="/Preferências">Enquete de Preferências</Link>
+                    <Link href="/preferencias">Enquete de Preferências</Link>
                 </li>
             </ul>
         </div>
     );
 };
 
-export default MainPage;
+export default PaginaPrincipal;

@@ -8,6 +8,10 @@ use Inertia\Inertia;
 class CalculadoraController extends Controller
 {
     //
+    public function mostrarCalculadora()
+    {
+        return Inertia::render("Calculadora");
+    }
     public function calcular(Request $request)
     {
         $request->validate([

@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\EnqueteController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\PesquisaController;
@@ -13,56 +15,44 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// Route::get('/formulario', [FormController::class, 'ExibirFormulario'])->name('formulario.mostrar');
-// Route::post('/formulario', [FormController::class, 'Cadastrar'])->name('formulario.enviar');
-
-
 Route::get('/', function () {
     return Inertia::render('PaginaPrincipal');
 });
 
-Route::get("/FormCadastro", function () {
-    return Inertia::render("FormCadastro");
+Route::get('/form-cadastro', [FormController::class, 'exibirFormulario'])->name('formulario.mostrar');
+Route::post('/form-cadastro', [FormController::class, 'cadastrar'])->name('formulario.enviar');
+
+Route::get('/login', [LoginController::class, 'exibirFormulario'])->name('login.mostrar');
+Route::post('/login', [LoginController::class, 'login'])->name('login.enviar');
+
+Route::get('/pesquisa', [PesquisaController::class, 'mostrar'])->name('pesquisa.form');
+Route::post('/pesquisa', [PesquisaController::class, 'pesquisar'])->name('pesquisa.enviar');
+
+Route::get('/contato', [ContatoController::class, 'exibirFormContato'])->name('contato.mostrar');
+Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.enviar');
+
+Route::get('/calculadora', [CalculadoraController::class, 'exibirCalculadora'])->name('calculadora.mostrar');
+Route::post('/calculadora', [CalculadoraController::class, 'calcular'])->name('calculadora.enviar');
+
+Route::get('/feedback', [FeedbackController::class, 'mostrar'])->name('feedback.mostrar');
+Route::post('/feedback', [FeedbackController::class, 'enviar'])->name('feedback.enviar');
+
+Route::get("/eventos", function () {
+    return view("eventos.registro");
 });
-Route::post("/FormCadastro", [FormController::class, 'Cadastrar'])->name('formulario.enviar');
-
-Route::get("/login", function () {
-    return Inertia::render("FormLogin");
-});
-Route::post('/login', [LoginController::class, 'login'])->name('formulario.logar');
-
-Route::get("/pesquisa", function () {
-    return Inertia::render("Pesquisa");
+Route::post("/eventos", [EventoController::class, 'registrar']);
+Route::get("/eventos", function () {
+    return view("eventos");
 });
 
-Route::get("/pesquisa/resultados", [PesquisaController::class, "pesquisa"])->name("pesquisa.resultados");
+Route::get('/quiz', [QuizController::class, 'mostrarQuiz'])->name('quiz.mostrar');
+Route::post('/quiz', [QuizController::class, 'respostasFormulario'])->name('quiz.respostas');
 
-Route::get("/contato", function () {
-    return Inertia::render("Contato");
-});
+Route::get('/newsletter', [NewsletterController::class, 'mostrar'])->name('newsletter.mostrar');
+Route::post('/newsletter', [NewsletterController::class, 'inscrever'])->name('newsletter.enviar');
 
-Route::post("/contato", [ContatoController::class, "enviar"]);
+Route::get("/enquete", [EnqueteController::class, 'mostrarEnquete'])->name('enquete.mostrar');
+Route::post("/enquete", [EnqueteController::class, 'enviar'])->name('enquete.enviar');
 
-Route::get("/calculadora", function () {
-    return Inertia::render("Calculadora");
-});
-
-Route::post("/calculadora", [CalculadoraController::class, "calcular"]);
-
-Route::get("/feedback", function () {
-    return Inertia::render("Feedback");
-});
-Route::post("/feedback", [FeedbackController::class, "enviar"]);
-
-Route::get("/quiz", [QuizController::class, "mostrarQuiz"])->name("quiz.mostrar");
-;
-Route::post("/quiz", [QuizController::class, "respostasFormulario"])->name("quiz.respostas");
-;
-
-Route::get("/newsletter", [NewsletterController::class, "index"]);
-Route::post("/newsletter", [NewsletterController::class, "inscrever"]);
-
-// Route::get("/", function () {
-//     return Inertia::render("FormCadastro");
-// });
 require __DIR__ . '/auth.php';
+

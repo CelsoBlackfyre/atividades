@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class QuizController extends Controller
@@ -12,7 +11,6 @@ class QuizController extends Controller
 
     public function mostrarQuiz()
     {
-        // return Inertia::render("Quiz");
         return view("quiz.form");
     }
 
@@ -22,7 +20,6 @@ class QuizController extends Controller
             'pergunta1' => 'required',
             'pergunta2' => 'required',
         ]);
-
 
         $respostas = [
             'pergunta1' => 'Londres',

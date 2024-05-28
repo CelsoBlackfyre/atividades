@@ -10,12 +10,29 @@ class EnqueteController extends Controller
 
     public function mostrarEnquete()
     {
-        return view("enquete.form");
+        $resultados = session("resultados", [
+            'Star Wars' => 0,
+            'Harry Potter' => 0,
+            'Senhor dos Aneis' => 0,
+            'Duna' => 0,
+            'Mad Max' => 0,
+        ]);
+        return view("enquete", compact("resultados"));
     }
 
-    public function calcularEnquete(Request $request)
+    public function enviar(Request $request)
     {
-        $opcao1 = 0;
+        $filme = $request->input("filme");
+        $resultados = session("resultados", [
+            'Star Wars' => 0,
+            'Harry Potter' => 0,
+            'Senhor dos Aneis' => 0,
+            'Duna' => 0,
+            'Mad Max' => 0,
+        ]);
+        $resultados[$filme] = $resultados[$filme] + 1;
+        session(["resultados" => $resultados]);
+        return redirect()->route("enquete.mostrar");
     }
 
 
