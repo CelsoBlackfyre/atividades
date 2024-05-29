@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 class EnqueteController extends Controller
 {
 
+    public function exibirEnquete()
+    {
+        return view("enquete.form");
+    }
+
 
     public function mostrarEnquete()
     {

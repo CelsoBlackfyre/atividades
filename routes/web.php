@@ -31,7 +31,9 @@ Route::post('/pesquisa', [PesquisaController::class, 'pesquisar'])->name('pesqui
 Route::get('/contato', [ContatoController::class, 'exibirFormContato'])->name('contato.mostrar');
 Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.enviar');
 
-Route::get('/calculadora', [CalculadoraController::class, 'exibirCalculadora'])->name('calculadora.mostrar');
+Route::get('/calculadora', function () {
+    return Inertia::render("Calculadora");
+});
 Route::post('/calculadora', [CalculadoraController::class, 'calcular'])->name('calculadora.enviar');
 
 Route::get('/feedback', [FeedbackController::class, 'mostrar'])->name('feedback.mostrar');
@@ -51,8 +53,8 @@ Route::post('/quiz', [QuizController::class, 'respostasFormulario'])->name('quiz
 Route::get('/newsletter', [NewsletterController::class, 'mostrar'])->name('newsletter.mostrar');
 Route::post('/newsletter', [NewsletterController::class, 'inscrever'])->name('newsletter.enviar');
 
-Route::get("/enquete", [EnqueteController::class, 'mostrarEnquete'])->name('enquete.mostrar');
-Route::post("/enquete", [EnqueteController::class, 'enviar'])->name('enquete.enviar');
+Route::get("/enquete", [EnqueteController::class, 'exibirEnquete'])->name("enquete.form");
+Route::post("/enquete", [EnqueteController::class, 'enviar']);
 
 require __DIR__ . '/auth.php';
 

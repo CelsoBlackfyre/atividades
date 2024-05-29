@@ -18,7 +18,7 @@ const PaginaPrincipal = () => {
                     <Link href="/pesquisa">Pesquisa com Método GET</Link>
                 </li>
                 <li>
-                    <Link href="/Contato">Formulário de Contato</Link>
+                    <Link href="/contato">Formulário de Contato</Link>
                 </li>
                 <li>
                     <Link href="/calculadora">Calculadora Simples</Link>
@@ -36,7 +36,7 @@ const PaginaPrincipal = () => {
                     <Link href="/quiz">Quiz Online</Link>
                 </li>
                 <li>
-                    <Link href="/preferencias">Enquete de Preferências</Link>
+                    <Link href="/enquete">Enquete de Preferências</Link>
                 </li>
             </ul>
         </div>
