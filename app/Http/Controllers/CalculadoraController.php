@@ -49,4 +49,7 @@ class CalculadoraController extends Controller
             'operador' => $operador,
         ]);
     }
+
+
+
 }

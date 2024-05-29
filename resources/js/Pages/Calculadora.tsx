@@ -37,7 +37,10 @@ const Calculadora = () => {
                 <h1 className="text-xl font-bold text-center text-gray-700 dark:text-gray-200 ">
                     Calculadora
                 </h1>
-                <form onSubmit={handleSubmit}>
+                <form
+                    action="{{ route('Calculadora') }}"
+                    onSubmit={handleSubmit}
+                >
                     <div>
                         <label className="text-sm text-gray-700 dark:text-gray-200 mr-2">
                             Numero 1
@@ -71,6 +74,7 @@ const Calculadora = () => {
                     </div>
                     <button type="submit">Calcular</button>
                 </form>
+                <div id="resultado"></div>
             </div>
         </>
     );
