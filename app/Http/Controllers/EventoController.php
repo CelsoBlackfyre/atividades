@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Participante;
 
 class EventoController extends Controller
 {
@@ -15,15 +16,24 @@ class EventoController extends Controller
         //
         $participantes = Participante::all();
 
-        return view("participante", compact("participante"));
+        return view("eventos", compact("participante"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function registrar(Request $request)
     {
         //
+        $request->validate([
+            'nome' => 'required|string',
+            'email' => 'required|email',
+            'evento' => 'required|string',
+        ]);
+
+        Participante::create($request->all());
+
+        return redirect()->route('eventos')->with('mensagem', 'Participante registrado com sucesso!');
     }
 
     /**

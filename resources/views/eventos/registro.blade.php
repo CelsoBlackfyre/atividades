@@ -18,17 +18,10 @@
             <input type="email" id="email" name="email">
         </div>
         <div>
-            <label for="data">Data:</label>
-            <input type="date" id="data" name="data">
+            <label for="evento">Data:</label>
+            <input type="text" id="evento" name="evento">
         </div>
-        <div>
-            <label for="hora">Hora:</label>
-            <input type="time" id="hora" name="hora">
-        </div>
-        <div>
-            <label for="local">Local:</label>
-            <input type="text" id="local" name="local">
-        </div>
+
         <button type="submit">
             Enviar
         </button>

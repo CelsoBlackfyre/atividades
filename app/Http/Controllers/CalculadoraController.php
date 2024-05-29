@@ -7,11 +7,11 @@ use Inertia\Inertia;
 
 class CalculadoraController extends Controller
 {
-    //
     public function mostrarCalculadora()
     {
-        return Inertia::render("Calculadora");
+        return view("calculadora.form");
     }
+
     public function calcular(Request $request)
     {
         $request->validate([
@@ -20,8 +20,8 @@ class CalculadoraController extends Controller
             'operador' => 'required|string',
         ]);
 
-        $numero1 = $request->input('number1');
-        $numero2 = $request->input('number2');
+        $numero1 = $request->input('numero1');
+        $numero2 = $request->input('numero2');
         $operador = $request->input('operador');
         $resultado = null;
 
@@ -42,14 +42,6 @@ class CalculadoraController extends Controller
                 $resultado = "Operador inválido";
         }
 
-        return Inertia::render("Calculadora", [
-            'resultado' => $resultado,
-            'numero1' => $numero1,
-            'numero2' => $numero2,
-            'operador' => $operador,
-        ]);
+        return view("calculadora.form", compact("resultado"));
     }
-
-
-
 }

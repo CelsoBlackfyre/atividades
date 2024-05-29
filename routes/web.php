@@ -31,10 +31,8 @@ Route::post('/pesquisa', [PesquisaController::class, 'pesquisar'])->name('pesqui
 Route::get('/contato', [ContatoController::class, 'exibirFormContato'])->name('contato.mostrar');
 Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.enviar');
 
-Route::get('/calculadora', function () {
-    return Inertia::render("Calculadora");
-});
-Route::post('/calculadora', [CalculadoraController::class, 'calcular'])->name('calculadora.enviar');
+Route::get('/calculadora', [CalculadoraController::class, 'mostrarCalculadora'])->name('calculadora.form');
+Route::post('/calculadora', [CalculadoraController::class, 'calcular'])->name('calculadora.calcular');
 
 Route::get('/feedback', [FeedbackController::class, 'mostrar'])->name('feedback.mostrar');
 Route::post('/feedback', [FeedbackController::class, 'enviar'])->name('feedback.enviar');
@@ -42,7 +40,9 @@ Route::post('/feedback', [FeedbackController::class, 'enviar'])->name('feedback.
 Route::get("/eventos", function () {
     return view("eventos.registro");
 });
-Route::post("/eventos", [EventoController::class, 'registrar']);
+Route::post("/eventos", function () {
+    return view("eventos.registro");
+});
 Route::get("/eventos", function () {
     return view("eventos");
 });
