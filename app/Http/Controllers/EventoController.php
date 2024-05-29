@@ -10,8 +10,13 @@ class EventoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function mostrarForm(Request $request)
+    {
 
-    public function mostrarParticipanetes()
+        return view("eventos.registro");
+    }
+
+    public function mostrarParticipantes()
     {
         //
         $participantes = Participante::all();

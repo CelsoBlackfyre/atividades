@@ -40,12 +40,8 @@ Route::post('/feedback', [FeedbackController::class, 'enviar'])->name('feedback.
 Route::get("/eventos", function () {
     return view("eventos.registro");
 });
-Route::post("/eventos", function () {
-    return view("eventos.registro");
-});
-Route::get("/eventos", function () {
-    return view("eventos");
-});
+Route::get("/eventos", [EventoController::class, ""])->name("");
+Route::post("/eventos", [EventoController::class, "registrar"])->name("");
 
 Route::get('/quiz', [QuizController::class, 'mostrarQuiz'])->name('quiz.mostrar');
 Route::post('/quiz', [QuizController::class, 'respostasFormulario'])->name('quiz.respostas');
