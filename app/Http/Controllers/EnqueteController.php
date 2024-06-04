@@ -37,7 +37,7 @@ class EnqueteController extends Controller
         ]);
         $resultados[$filme] = $resultados[$filme] + 1;
         session(["resultados" => $resultados]);
-        return redirect()->route("enquete.mostrar");
+        return view("enquete.form", compact("resultados"));
     }
 
 

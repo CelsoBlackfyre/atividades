@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Form Preferencia</title>
+    <title>Form Enquete</title>
 </head>
 
 <body>
@@ -32,6 +32,11 @@
             Enviar
         </button>
     </form>
+    @if (@isset($preferencia))
+    <div id="resultados">
+        <p>A sua preferência é: {{$resultados}}</p>
+    </div>
+    @endif
 </body>
 
 </html>

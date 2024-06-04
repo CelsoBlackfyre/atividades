@@ -47,7 +47,7 @@ class FormController extends Controller
 
     public function authenticated(Request $request, $user)
     {
-        $message = 'Usuario invalido'; // Customize the message
+        $message = 'Usuario invalido';
 
         return Inertia::render('Login', compact('Usuario invalido'));
     }

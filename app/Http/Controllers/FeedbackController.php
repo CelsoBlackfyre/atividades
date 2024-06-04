@@ -10,17 +10,18 @@ class FeedbackController extends Controller
     //
     public function mostrar(Request $request)
     {
-        return Inertia::render('Feedback');
+        return view('feedback.form');
     }
 
-    public function store(Request $request)
+
+    public function enviar(Request $request)
     {
         $request->validate([
             'nome' => 'required|string',
             'avaliacao' => 'required|integer',
             'comentario' => 'required|string',
         ]);
-        return Inertia::render('Feedback', ['message' => 'Feedback enviado com sucesso!']);
+        return view('feedback.avaliacao', ['dados' => $request->all()]);
     }
 
 
