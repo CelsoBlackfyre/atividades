@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::get('/cadastro', [FormController::class, 'ExibirFormulario'])->name('cadastro.mostrar');
 Route::post('/cadastro', [FormController::class, 'Cadastrar'])->name('cadastro.enviar');
+Route::get('/cadastro.listar', [FormController::class, 'index'])->name('cadastro.listar');
+Route::delete('/cadastro/{id}', [FormController::class, 'deletar'])->name('cadastro.deletar');
 
 Route::get('/login', [LoginController::class, 'exibirFormulario'])->name('login.mostrar');
 Route::post('/login', [LoginController::class, 'login'])->name('login.enviar');

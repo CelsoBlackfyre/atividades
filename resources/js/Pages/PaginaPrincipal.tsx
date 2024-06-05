@@ -7,6 +7,9 @@ const PaginaPrincipal = () => {
             <h1>Lista de Exercicio</h1>
             <ul>
                 <li>
+                    <Link href="/cadastro.listar">Listar Usuarios</Link>
+                </li>
+                <li>
                     <Link href="/cadastro">Formulário de Cadastro Simples</Link>
                 </li>
                 <li>

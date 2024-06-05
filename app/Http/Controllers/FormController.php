@@ -59,7 +59,7 @@ class FormController extends Controller
 
         Usuario::find($id)->delete();
 
-        return Inertia::render('PaginaPrincipal');
+        return view('cadastro.deletar', ['id' => $id]);
     }
 
 
@@ -67,7 +67,8 @@ class FormController extends Controller
     public function index()
     {
         //
-        Usuario::findOrFail($id)->delete();
+        $usuarios = Usuario::all();
+        return view('cadastro.listar', compact('usuarios'));
     }
 
     /**
