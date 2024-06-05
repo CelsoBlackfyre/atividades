@@ -14,7 +14,7 @@ class FormController extends Controller
 
     public function ExibirFormulario()
     {
-        return Inertia::render('FormCadastro');
+        return view('cadastro.form');
     }
 
     public function Cadastrar(Request $request)
@@ -28,9 +28,10 @@ class FormController extends Controller
             'idade' => 'required|integer|min:18',
         ]);
 
+
         Usuario::create($dados);
 
-        return Inertia::render('ResultadoForm', ['dados' => $dados]);
+        return view('cadastro.resultado', ['dados' => $dados]);
 
     }
 
@@ -53,12 +54,20 @@ class FormController extends Controller
     }
 
 
+    public function deletar($id)
+    {
+
+        Usuario::find($id)->delete();
+
+        return Inertia::render('PaginaPrincipal');
+    }
 
 
 
     public function index()
     {
         //
+        Usuario::findOrFail($id)->delete();
     }
 
     /**

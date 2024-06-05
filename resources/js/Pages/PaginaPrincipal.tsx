@@ -7,9 +7,7 @@ const PaginaPrincipal = () => {
             <h1>Lista de Exercicio</h1>
             <ul>
                 <li>
-                    <Link href="/form-cadastro">
-                        Formulário de Cadastro Simples
-                    </Link>
+                    <Link href="/cadastro">Formulário de Cadastro Simples</Link>
                 </li>
                 <li>
                     <Link href="/login">Formulário de Login</Link>

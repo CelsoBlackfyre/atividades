@@ -1,7 +1,18 @@
 import React from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 
-const ResultadoForm = ({ dados }) => {
+const ResultadoForm = ({
+    dados,
+}: {
+    dados: {
+        nome: string;
+        sobrenome: string;
+        email: string;
+        nomeUsuario: string;
+        senha: string;
+        idade: number;
+    };
+}) => {
     return (
         <div className="container">
             <div className="row">

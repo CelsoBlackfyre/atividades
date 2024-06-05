@@ -36,7 +36,7 @@ const FormCadastro = () => {
                 </h1>
                 <form
                     onSubmit={handleSubmit}
-                    action="/ResultadoForm"
+                    action="/FormCadastro"
                     method="POST"
                     className="form w-full flex flex-col gap-4"
                 >

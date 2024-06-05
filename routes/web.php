@@ -19,11 +19,14 @@ Route::get('/', function () {
     return Inertia::render('PaginaPrincipal');
 });
 
-Route::get('/form-cadastro', [FormController::class, 'exibirFormulario'])->name('formulario.mostrar');
-Route::post('/form-cadastro', [FormController::class, 'cadastrar'])->name('formulario.enviar');
+Route::get('/cadastro', [FormController::class, 'ExibirFormulario'])->name('cadastro.mostrar');
+Route::post('/cadastro', [FormController::class, 'Cadastrar'])->name('cadastro.enviar');
 
 Route::get('/login', [LoginController::class, 'exibirFormulario'])->name('login.mostrar');
 Route::post('/login', [LoginController::class, 'login'])->name('login.enviar');
+
+Route::get('/Usuario', [FormController::class, 'deletar'])->name('Usuario.deletar');
+Route::delete('/Usuario/');
 
 Route::get('/pesquisa', [PesquisaController::class, 'mostrar'])->name('pesquisa.form');
 Route::post('/pesquisa', [PesquisaController::class, 'pesquisar'])->name('pesquisa.enviar');
@@ -40,6 +43,7 @@ Route::post('/feedback', [FeedbackController::class, 'enviar'])->name('feedback.
 Route::get("/eventos", function () {
     return view("eventos.registro");
 });
+
 Route::get("/eventos", [EventoController::class, ""])->name("");
 Route::post("/eventos", [EventoController::class, "registrar"])->name("");
 
