@@ -20,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/cadastro', [FormController::class, 'ExibirFormulario'])->name('cadastro.mostrar');
+Route::get('/cadastro/{id}', [FormController::class, 'ExibirFormulario'])->name('cadastro.mostrar');
+
 Route::post('/cadastro', [FormController::class, 'Cadastrar'])->name('cadastro.enviar');
 Route::get('/cadastro.listar', [FormController::class, 'index'])->name('cadastro.listar');
 Route::delete('/cadastro/{id}', [FormController::class, 'deletar'])->name('cadastro.deletar');
@@ -33,7 +35,7 @@ Route::delete('/Usuario/');
 Route::get('/pesquisa', [PesquisaController::class, 'mostrar'])->name('pesquisa.form');
 Route::post('/pesquisa', [PesquisaController::class, 'pesquisar'])->name('pesquisa.enviar');
 
-Route::get('/contato', [ContatoController::class, 'exibirFormContato'])->name('contato.mostrar');
+Route::get('/contato', [ContatoController::class, 'mostrar'])->name('contato.mostrar');
 Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.enviar');
 
 Route::get('/calculadora', [CalculadoraController::class, 'mostrarCalculadora'])->name('calculadora.form');
@@ -56,7 +58,8 @@ Route::get('/newsletter', [NewsletterController::class, 'mostrar'])->name('newsl
 Route::post('/newsletter', [NewsletterController::class, 'inscrever'])->name('newsletter.enviar');
 
 Route::get("/enquete", [EnqueteController::class, 'exibirEnquete'])->name("enquete.form");
-Route::post("/enquete", [EnqueteController::class, 'enviar']);
+Route::post("/enquete", [EnqueteController::class, 'enviar'])->name("enquete.enviar");
+Route::get("/enquete", [EnqueteController::class, 'listarEnquete'])->name("enquete.listar");
 
 require __DIR__ . '/auth.php';
 

@@ -7,7 +7,7 @@
 
 <body>
     <h1>Qual é teu filme favorito ?</h1>
-    <form action="{{route('enquete.form')}}" method="POST">
+    <form action="{{route('enquete.enviar')}}" method="POST">
         @csrf
         <div>
             <input type="radio" name="filme" value="Star Wars" id="Star Wars">Star Wars
@@ -32,11 +32,12 @@
             Enviar
         </button>
     </form>
-    @if (@isset($preferencia))
+    @if (@isset($resultados))
     <div id="resultados">
-        <p>A sua preferência é: {{$resultados}}</p>
+        <p>A sua preferência é: {{ $resultados }}</p>
     </div>
     @endif
+
 </body>
 
 </html>

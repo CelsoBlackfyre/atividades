@@ -9,18 +9,20 @@
 </head>
 
 <body>
-    <h1>Deletar Atividade</h1>
+    <h1>Deletar Usuario</h1>
 
     @php
     $request = request();
     $id = $request->input('id');
     @endphp
-    <form action="{{ route('cadastro.listar', ['id' => $id]) }}" method="DELETE">
+    {{-- , ['id' => $id]) }} --}}
+    <form action="{{ route('cadastro.listar'}} method=" DELETE">
         @csrf
         <label for="id">Id:</label>
         <input type="number" id="id" name="id" value="{{ $id }}"><br>
         <button type="submit">Deletar</button>
     </form>
+    <form action="{{ route('cadastro.listar') method=""}}">
 
 </body>
 

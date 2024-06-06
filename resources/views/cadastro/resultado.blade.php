@@ -32,7 +32,7 @@
                 <p>Senha: {{ $senha }}</p>
                 <p>Idade: {{ $idade }}</p>
                 <button type="submit">
-                    <a href="{{ route('cadastro.foUndefined variable $requestrm') }}">Voltar</a>
+                    <a href="{{ route('cadastro.listar') }}">Voltar</a>
                 </button>
             </div>
         </div>

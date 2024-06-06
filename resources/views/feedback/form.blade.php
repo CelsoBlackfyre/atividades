@@ -29,6 +29,11 @@
         </div>
         <button type="submit">Enviar</button>
     </form>
+    @if (@isset($feedback))
+    <div id="feedback">
+        <p>Feedback: {{$feedback}}</p>
+    </div>
+    @endif
 </body>
 
 </html>

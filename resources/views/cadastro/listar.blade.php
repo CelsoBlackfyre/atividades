@@ -23,6 +23,9 @@
                 @csrf
                 @method('DELETE')
                 <button type="submit">Deletar</button>
+                @method('GET')
+                <button type="submit">Editar</button>
+                </button>
             </form>
 
         </li>

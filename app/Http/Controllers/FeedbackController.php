@@ -16,13 +16,12 @@ class FeedbackController extends Controller
 
     public function enviar(Request $request)
     {
-        $request->validate([
+        $feedback = $request->validate([
             'nome' => 'required|string',
             'avaliacao' => 'required|integer',
             'comentario' => 'required|string',
         ]);
-        return view('feedback.avaliacao', ['dados' => $request->all()]);
+
+        return view('feedback.mostrar', compact('feedback'));
     }
-
-
 }

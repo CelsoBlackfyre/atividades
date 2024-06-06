@@ -16,7 +16,6 @@ class PesquisaController extends Controller
 
     public function resultados(Request $request)
     {
-        $pesquisa = $request->pesquisa;
-        return view("pesquisa.resultados", compact("pesquisa"));
+        return view("pesquisa.enviar");
     }
 }

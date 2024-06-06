@@ -35,9 +35,9 @@ class EnqueteController extends Controller
             'Duna' => 0,
             'Mad Max' => 0,
         ]);
-        $resultados[$filme] = $resultados[$filme] + 1;
-        session(["resultados" => $resultados]);
-        return view("enquete.form", compact("resultados"));
+        $resultados[$filme] = ($resultados[$filme] ?? 0) + 1;
+        $resultados = session("resultados", $resultados);
+        return view("enquete.listar", compact("resultados"));
     }
 
 

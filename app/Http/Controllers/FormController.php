@@ -12,9 +12,11 @@ class FormController extends Controller
      * Display a listing of the resource.
      */
 
-    public function ExibirFormulario()
+    public function ExibirFormulario($id = null)
     {
-        return view('cadastro.form');
+        $usuario = Usuario::find($id);
+
+        return view('cadastro.form', compact('usuario'));
     }
 
     public function Cadastrar(Request $request)
@@ -28,8 +30,15 @@ class FormController extends Controller
             'idade' => 'required|integer|min:18',
         ]);
 
+        if ($request->id) {
+            $usuario = Usuario::find($request->id);
+            $usuario->update($dados);
+            // Usuario::query()->update($dados);
+        } else {
+            Usuario::create($dados);
+        }
 
-        Usuario::create($dados);
+
 
         return view('cadastro.resultado', ['dados' => $dados]);
 
